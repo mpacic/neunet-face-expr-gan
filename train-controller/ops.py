@@ -83,10 +83,12 @@ def concat_label(x, label, duplicate=1):
     label = tf.tile(label, [1, duplicate])
     label_shape = label.get_shape().as_list()
     if len(x_shape) == 2:
-        return tf.concat(1, [x, label])
+        print "LABEL: ", label
+        print "X: ", x
+        return tf.concat([x, label], 1)
     elif len(x_shape) == 4:
         label = tf.reshape(label, [x_shape[0], 1, 1, label_shape[-1]])
-        return tf.concat(3, [x, label*tf.ones([x_shape[0], x_shape[1], x_shape[2], label_shape[-1]])])
+        return tf.concat([x, label*tf.ones([x_shape[0], x_shape[1], x_shape[2], label_shape[-1]])], 3)
 
 def flip(image):
     if np.random.choice([True, False]):
