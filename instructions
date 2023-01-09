@@ -1,0 +1,12 @@
+1. clone repository:
+git clone https://github.com/HuiDingUMD/ExprGAN.git
+2. follow instructions in the README.md, downloading vgg-face.mat and placing it into joint-train/utils directory
+3. Make necessary edits:
+ - open joint-train/test-oulu.sh and rename main_simple_vgg_mul.py to main.py
+4. Download the appropriate python versions (2.7.18)
+- pyenv
+- pyenv virtualenv
+5. Create and activate a virtual environment
+6. install tensorflow==1.14 and Pillow using pip
+7. Copy the ckplus_anno.pickle file to split folder
+8. unzip the CKPLUS dataset into the data folder, files inside should look something like data/CKPLUS/anger/S010_004_00000017.png, ...
